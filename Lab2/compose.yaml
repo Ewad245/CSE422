@@ -1,0 +1,22 @@
+﻿services:
+  sql-server:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sql-server
+    environment:
+      ACCEPT_EULA: "Y" # Accept the SQL Server End-User License Agreement
+      SA_PASSWORD: "StrongPassword123!" # Set a strong password for the 'sa' user
+    ports:
+      - "1433:1433" # Maps SQL Server's default port to the host
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+
+  adminer:
+    image: adminer:latest
+    container_name: adminer
+    ports:
+      - "8080:8080" # Access Adminer via http://localhost:8080
+    depends_on:
+      - sql-server
+
+volumes:
+  sqlserver-data:
