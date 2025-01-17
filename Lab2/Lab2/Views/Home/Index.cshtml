@@ -1,8 +1,69 @@
-﻿@{
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="text-center mb-4">Device Management System</h1>
+            
+            <div class="row g-4">
+                <!-- Devices -->
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-laptop fa-3x text-primary mb-3"></i>
+                            <h5 class="card-title">Devices</h5>
+                            <p class="card-text">Manage your devices inventory</p>
+                            <a asp-controller="Device" asp-action="Index" class="btn btn-primary">
+                                <i class="fas fa-arrow-right"></i> Go to Devices
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Device Categories -->
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-th-large fa-3x text-success mb-3"></i>
+                            <h5 class="card-title">Device Categories</h5>
+                            <p class="card-text">Manage device categories</p>
+                            <a asp-controller="DeviceCategory" asp-action="Index" class="btn btn-success">
+                                <i class="fas fa-arrow-right"></i> Go to Categories
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Users -->
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-users fa-3x text-info mb-3"></i>
+                            <h5 class="card-title">Users</h5>
+                            <p class="card-text">Manage system users</p>
+                            <a asp-controller="User" asp-action="Index" class="btn btn-info text-white">
+                                <i class="fas fa-arrow-right"></i> Go to Users
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Device Assignments -->
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-exchange-alt fa-3x text-warning mb-3"></i>
+                            <h5 class="card-title">Device Assignments</h5>
+                            <p class="card-text">Manage device assignments to users</p>
+                            <a asp-controller="DeviceAssignment" asp-action="Index" class="btn btn-warning text-dark">
+                                <i class="fas fa-arrow-right"></i> Go to Assignments
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

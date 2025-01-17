@@ -1,0 +1,48 @@
+@model Lab2.Models.DeviceAssignment
+
+@{
+    ViewData["Title"] = "Return Device";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-warning">
+                    <h4>Return Device</h4>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning">
+                        <h5>Are you sure you want to return this device?</h5>
+                    </div>
+
+                    <dl class="row">
+                        <dt class="col-sm-4">Device</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Device.DeviceName)</dd>
+
+                        <dt class="col-sm-4">Device Code</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Device.DeviceCode)</dd>
+
+                        <dt class="col-sm-4">Assigned To</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.User.FullName)</dd>
+
+                        <dt class="col-sm-4">Assignment Date</dt>
+                        <dd class="col-sm-8">@Model.AssignmentDate.ToString("MM/dd/yyyy HH:mm")</dd>
+                    </dl>
+
+                    <form asp-action="Return">
+                        <input type="hidden" asp-for="AssignmentId" />
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-warning">
+                                <i class="fas fa-undo"></i> Return Device
+                            </button>
+                            <a asp-action="Index" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Back to List
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
